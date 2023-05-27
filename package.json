@@ -1,0 +1,34 @@
+{
+  "name": "workforcewidget",
+  "version": "1.0.0",
+  "description": "Employee Manager",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ReneMalingre/WorkForceWidget.git"
+  },
+  "keywords": [
+    "MySQL",
+    "Node.js",
+    "JavaScript"
+  ],
+  "author": "Rene Malingre",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ReneMalingre/WorkForceWidget/issues"
+  },
+  "homepage": "https://github.com/ReneMalingre/WorkForceWidget#readme",
+  "dependencies": {
+    "inquirer": "^8.2.4",
+    "mysql2": "^3.3.2"
+  },
+  "devDependencies": {
+    "jest": "^29.5.0"
+  }
+}
