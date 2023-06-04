@@ -1,11 +1,14 @@
+// Application entry point and main function
 // import statements
-const mysql = require('mysql2/promise')
+
+// Database connection
 const { getConnection } = require('./lib/db')
 
+// Main menu, which takes over the console
 const { splashScreen, mainMenu } = require('./lib/main-menu')
 
 async function main () {
-  // show splash screen
+  // show splash screen while database is connecting
   splashScreen()
 
   // connect to the database
@@ -22,4 +25,5 @@ async function main () {
   await mainMenu()
 }
 
+// run main function
 main()
