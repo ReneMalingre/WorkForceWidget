@@ -1,21 +1,25 @@
-// requires
-const env = require('dotenv').config()
-const { splashScreen, mainMenu } = require('./lib/cli-screens')
-// get the MySQL client
+// import statements
 const mysql = require('mysql2/promise')
+const { getConnection } = require('./lib/db')
 
-// create the connection to database
-// const connection = await mysql.createConnection({
-//   host: 'localhost',
-//   user: 'root',
-//   password: process.env.MYSQL_ROOT_PASSWORD,
-//   database: 'test'
-// })
+const { splashScreen, mainMenu } = require('./lib/main-menu')
 
-// execute will internally call prepare and query
-// connection.execute(
-//   // add in prepared statements
-// )
+async function main () {
+  // show splash screen
+  splashScreen()
 
-splashScreen()
-mainMenu()
+  // connect to the database
+  let db = null
+  try {
+    db = await getConnection()
+  } catch (err) {
+    console.log('Error connecting to the database.')
+    console.log(err)
+    return
+  }
+
+  // show main menu and run main application functions
+  await mainMenu()
+}
+
+main()
